@@ -11,6 +11,9 @@ logging:
     org.springframework.web: WARN
     com.thoughtmechanix: DEBUG
 
+spring:
+  main:
+    allow-bean-definition-overriding: true
 
 eureka:
   instance:

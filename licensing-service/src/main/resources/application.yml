@@ -1,8 +1,10 @@
 
 security:
   oauth2:
-   resource:
+    resource:
       userInfoUri: http://localhost:8901/auth/user
+    client: # This property (client.grant-type)
+      grant-type: client_credentials
 
 eureka:
   instance:
@@ -20,4 +22,22 @@ logging:
     org.springframework.web: WARN
     com.thoughtmechanix: DEBUG
 
-
+management:
+  endpoint:
+    health:      
+      enabled: true
+    env:
+      enabled: true
+    refresh:
+      enabled: true
+    beans:
+      enabled: true
+  endpoints:
+    web:      
+      exposure:        
+        include:        
+        - info
+        - env
+        - refresh
+        - beans
+        - loggers
